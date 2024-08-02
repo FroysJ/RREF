@@ -5,14 +5,16 @@
 #ifndef SOLUTION_H
 #define SOLUTION_H
 
+#include "Rat.h"
 #include <vector>
 using namespace std;
 
 
 class Solution {
 public:
-    void rref(vector<int>& matrix);
-    vector<int> ldiv(vector<int>& p1, vector<int>& p2);
+    void rref(vector<vector<Rat>>& matrix);
+    void ref(vector<vector<Rat>>& matrix);
+    vector<Rat> ldiv(vector<Rat>& p1, vector<Rat>& p2);
 };
 
 
