@@ -7,6 +7,12 @@
 
 using namespace std;
 
+Rat::Rat(int value) {
+    n = value;
+    d = 1;
+    val = (double) value;
+}
+
 Rat::Rat(int num, int denom) {
     n = num;
     d = denom;
@@ -32,5 +38,22 @@ int getD() {
 
 double getVal() {
     return val;
+}
+
+constexpr Rat& operator*=(const Rat& rhs) {
+    int newN = n * rhs.getN() / gcd(n * rhs.getN(), d * rhs.getD());
+    d = d * rhs.getD() / gcd(n * rhs.getN(), d * rhs.getD());
+    n = newN;
+    return *this;
+}
+
+constexpr Rat& operator*(Rat lhs, const Rat& rhs) {
+    return lhs *= rhs;
+}
+
+constexpr Rat& operator-=(const Rat& rhs) {
+    int lcm = lcm(d, rhs.getD());
+    d = lcm;
+    n = (n * (lcm / d)) + (rhs.getN() * (lcm / rhs.getD()));
 }
 
