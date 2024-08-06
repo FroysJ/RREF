@@ -24,6 +24,13 @@ public:
         simplify();
         return *this;
     }
+    constexpr Rat& operator+=(const Rat& rhs) {
+        int l = lcm(d, rhs.d);
+        n = (n * (l / d)) + (rhs.n * (l / rhs.d));
+        d = l;
+        simplify();
+        return *this;
+    }
     constexpr Rat& operator-=(const Rat& rhs) {
         int l = lcm(d, rhs.d);
         n = (n * (l / d)) - (rhs.n * (l / rhs.d));
@@ -39,6 +46,11 @@ public:
 constexpr Rat& operator*(const Rat& lhs, const Rat& rhs) {
     Rat lhsc = lhs;
     return lhsc *= rhs;
+}
+
+constexpr Rat& operator+(const Rat& lhs, const Rat& rhs) {
+    Rat lhsc = lhs;
+    return lhsc += rhs;
 }
 
 #endif //RAT_H

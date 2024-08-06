@@ -15,7 +15,8 @@ public:
     static void rref(vector<vector<Rat>>& matrix);
     static void ref(vector<vector<Rat>>& matrix);
     static void printMatrix(const vector<vector<Rat>>& matrix);
-    vector<Rat> ldiv(vector<Rat>& p1, vector<Rat>& p2);
+    static void printVector(const vector<Rat>& vec);
+    static vector<Rat> sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d);
 };
 
 

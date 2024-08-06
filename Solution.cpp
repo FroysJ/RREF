@@ -86,8 +86,26 @@ void Solution::printMatrix(const vector<vector<Rat>> &matrix) {
     cout << endl;
 }
 
-vector<Rat> Solution::ldiv(vector<Rat>& p1, vector<Rat>& p2) {
-    vector<Rat> q;
+void Solution::printVector(const vector<Rat>& vec) {
+    for (auto i : vec) {
+        cout << i.printVal() << " ";
+    }
+    cout << endl;
+}
+
+
+vector<Rat> Solution::sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d) {
+    Rat factor(d.first.d, d.first.n);
+    Rat mult = -1 * factor * d.second;
+    vector<Rat> q(p.size(), p[0]);
+    for (int i = 1; i < p.size(); i++) {
+        Rat em = mult * q[i-1];
+        Rat eh = p[i] + em;
+        q[i] = eh;
+    }
+    for (int i = 0; i < q.size()-1; i++) {
+        q[i] *= factor;
+    }
     return q;
 }
 

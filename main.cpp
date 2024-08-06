@@ -24,5 +24,12 @@ int main() {
     cout << endl;
     Solution::rref(matrix);
     Solution::printMatrix(matrix);
+
+    Solution::printVector(Solution::sdiv({2,-5,3,7},{1,-2})); // 2, -1, 1, 9
+    Solution::printVector(Solution::sdiv({2,5,0,9},{1,3})); // 2, -1, 3, 0
+    Solution::printVector(Solution::sdiv({3,0,5,-1},{1,1})); // 3, -3, 8, -9
+    Solution::printVector(Solution::sdiv({4,-8,-1,5},{2,-1})); // 2, -3, -2, 3
+    Solution::printVector(Solution::sdiv({1,-5,3,7},{1,-3})); // 1, -2, -3, -2
+
     return 0;
 }
