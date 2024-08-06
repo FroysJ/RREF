@@ -12,8 +12,9 @@ using namespace std;
 
 class Solution {
 public:
-    void rref(vector<vector<Rat>>& matrix);
-    void ref(vector<vector<Rat>>& matrix);
+    static void rref(vector<vector<Rat>>& matrix);
+    static void ref(vector<vector<Rat>>& matrix);
+    static void printMatrix(const vector<vector<Rat>>& matrix);
     vector<Rat> ldiv(vector<Rat>& p1, vector<Rat>& p2);
 };
 

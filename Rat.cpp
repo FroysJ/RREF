@@ -4,56 +4,44 @@
 
 #include "Rat.h"
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
-Rat::Rat(int value) {
-    n = value;
-    d = 1;
-    val = (double) value;
-}
-
-Rat::Rat(int num, int denom) {
-    n = num;
-    d = denom;
-    if (d == 0) {
-        val = numeric_limits<double>::max();
-        if (n < 0) val *= -1;
-    } else {
-        val = (double) n / (double) d;
+string Rat::printVal() const {
+    if (n == 0) return "0";
+    if (d == n) return "1";
+    string ret = to_string(n);
+    if (d != 1) {
+        ret.append(1, '/');
+        ret.append(to_string(d));
     }
+    return ret;
 }
 
-bool isInt() {
-    return (double) (n / d) == val;
-}
-
-int getN() {
-    return n;
-}
-
-int getD() {
-    return d;
-}
-
-double getVal() {
-    return val;
-}
-
-constexpr Rat& operator*=(const Rat& rhs) {
-    int newN = n * rhs.getN() / gcd(n * rhs.getN(), d * rhs.getD());
-    d = d * rhs.getD() / gcd(n * rhs.getN(), d * rhs.getD());
-    n = newN;
-    return *this;
-}
-
-constexpr Rat& operator*(Rat lhs, const Rat& rhs) {
-    return lhs *= rhs;
-}
-
-constexpr Rat& operator-=(const Rat& rhs) {
-    int lcm = lcm(d, rhs.getD());
-    d = lcm;
-    n = (n * (lcm / d)) + (rhs.getN() * (lcm / rhs.getD()));
+void Rat::simplify() {
+    if (n == 0) {
+        d = 1;
+        return;
+    }
+    if (n == d) {
+        n = 1;
+        d = 1;
+        return;
+    }
+    bool neg = false;
+    if (((d < 0) && (n > 0)) || ((d > 0) && (n < 0))) {
+        neg = true;
+    }
+    d = abs(d);
+    n = abs(n);
+    int g = gcd(n, d);
+    if (g != 1) {
+        d /= g;
+        n /= g;
+    }
+    if (neg) {
+        n *= -1;
+    }
 }
 
