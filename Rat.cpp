@@ -19,29 +19,3 @@ string Rat::printVal() const {
     return ret;
 }
 
-void Rat::simplify() {
-    if (n == 0) {
-        d = 1;
-        return;
-    }
-    if (n == d) {
-        n = 1;
-        d = 1;
-        return;
-    }
-    bool neg = false;
-    if (((d < 0) && (n > 0)) || ((d > 0) && (n < 0))) {
-        neg = true;
-    }
-    d = abs(d);
-    n = abs(n);
-    int g = gcd(n, d);
-    if (g != 1) {
-        d /= g;
-        n /= g;
-    }
-    if (neg) {
-        n *= -1;
-    }
-}
-

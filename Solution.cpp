@@ -3,6 +3,8 @@
 //
 
 #include "Solution.h"
+
+#include <cassert>
 #include <vector>
 
 using namespace std;
@@ -107,5 +109,57 @@ vector<Rat> Solution::sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d) {
         q[i] *= factor;
     }
     return q;
+}
+
+vector<vector<int>> Solution::ratMatrixToInt(vector<vector<Rat>> &matrix) {
+    int scale = 1;
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[0].size(); j++) {
+            scale = lcm(scale, matrix[i][j].d);
+        }
+    }
+    Rat mult(scale);
+    vector<vector<int>> ret(matrix.size(), vector<int>(matrix[0].size(), 0));
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[0].size(); j++) {
+            matrix[i][j] *= mult;
+            assert(matrix[i][j].d == 1);
+            ret[i][j] = matrix[i][j].n;
+        }
+    }
+    return ret;
+}
+
+vector<int> Solution::ratVectorToInt(vector<Rat> &vec) {
+    int scale = 1;
+    for (auto & i : vec) {
+        scale = lcm(scale, i.d);
+    }
+    Rat mult(scale);
+    vector<int> ret(vec.size(), 0);
+    for (int i = 0; i < vec.size(); i++) {
+        vec[i] *= mult;
+        assert(vec[i].d == 1);
+        ret[i] = vec[i].n;
+    }
+    return ret;
+}
+
+vector<vector<int>> Solution::int_rref(vector<vector<int>>& matrix) {
+    vector ratMatrix(matrix.size(), vector<Rat>(matrix[0].size(), 0));
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[0].size(); j++) {
+            ratMatrix[i][j] = matrix[i][j];
+        }
+    }
+    rref(ratMatrix);
+    return ratMatrixToInt(ratMatrix);
+}
+
+vector<int> Solution::int_sdiv(vector<int>& p, pair<int,int>& d) {
+    vector<Rat> ratP(p.size(), 0);
+    pair<Rat,Rat> ratD(d.first, d.second);
+    vector<Rat> ret = sdiv(ratP, ratD);
+    return ratVectorToInt(ret);
 }
 

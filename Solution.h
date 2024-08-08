@@ -17,6 +17,10 @@ public:
     static void printMatrix(const vector<vector<Rat>>& matrix);
     static void printVector(const vector<Rat>& vec);
     static vector<Rat> sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d);
+    static vector<vector<int>> ratMatrixToInt(vector<vector<Rat>>& matrix);
+    static vector<int> ratVectorToInt(vector<Rat>& vec);
+    static vector<vector<int>> int_rref(vector<vector<int>>& matrix);
+    static vector<int> int_sdiv(vector<int>& p, pair<int,int>& d);
 };
 
 

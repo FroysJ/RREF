@@ -3,4 +3,10 @@ project(RREF)
 
 set(CMAKE_CXX_STANDARD 17)
 
+
+
 add_executable(RREF main.cpp Solution.cpp Rat.cpp)
+
+target_link_libraries(RREF PRIVATE ${Python3_LIBRARIES})
+
+target_include_directories(RREF PRIVATE ${Python3_INCLUDE_DIRS})
