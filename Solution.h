@@ -5,9 +5,9 @@
 #ifndef SOLUTION_H
 #define SOLUTION_H
 
-#include "Rat.h"
 #include <vector>
-using namespace std;
+
+#include "Rat.h"
 
 
 class Solution {
@@ -16,11 +16,11 @@ public:
     static void ref(vector<vector<Rat>>& matrix);
     static void printMatrix(const vector<vector<Rat>>& matrix);
     static void printVector(const vector<Rat>& vec);
-    static vector<Rat> sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d);
+    static vector<Rat> sdiv(const vector<Rat>& p, const vector<Rat>& d);
     static vector<vector<int>> ratMatrixToInt(vector<vector<Rat>>& matrix);
     static vector<int> ratVectorToInt(vector<Rat>& vec);
     static vector<vector<int>> int_rref(vector<vector<int>>& matrix);
-    static vector<int> int_sdiv(vector<int>& p, pair<int,int>& d);
+    static vector<int> int_sdiv(vector<int>& p, vector<int>& d);
 };
 
 

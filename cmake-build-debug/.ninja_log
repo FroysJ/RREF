@@ -1,0 +1,21 @@
+# ninja log v6
+2	164	7447981631103815	CMakeFiles/Simple.dir/SimplePYTHON_wrap.c	b2e1e3e5f7e98c60
+2	164	7447981631103815	C:/Users/froys/Downloads/CLionProjects/RREF/cmake-build-debug/CMakeFiles/Simple.dir/SimplePYTHON_wrap.c	b2e1e3e5f7e98c60
+2	164	7447981631103815	Simple.py	b2e1e3e5f7e98c60
+6	182	7447992823057197	CMakeFiles/Solution.dir/SolutionPYTHON_wrap.c	28cfc201a60e2b84
+2	164	7447981631103815	C:/Users/froys/Downloads/CLionProjects/RREF/cmake-build-debug/Simple.py	b2e1e3e5f7e98c60
+172	235	7447981631247921	CMakeFiles/Simple.dir/Simple.cpp.obj	f3c15cf85e7af01a
+6	182	7447992823057197	Solution.py	28cfc201a60e2b84
+6	182	7447992823057197	C:/Users/froys/Downloads/CLionProjects/RREF/cmake-build-debug/CMakeFiles/Solution.dir/SolutionPYTHON_wrap.c	28cfc201a60e2b84
+6	182	7447992823057197	C:/Users/froys/Downloads/CLionProjects/RREF/cmake-build-debug/Solution.py	28cfc201a60e2b84
+190	859	7447992823208828	CMakeFiles/Solution.dir/Solution.cpp.obj	6c8dc8e7a3fd137b
+21	487	7448061839265143	CMakeFiles/RREF.dir/Rat.cpp.obj	c5a9ef92603a017c
+6	559	7448061839115658	CMakeFiles/RREF.dir/main.cpp.obj	b5f32d6fdb3ed137
+13	653	7448061839188632	CMakeFiles/RREF.dir/Solution.cpp.obj	cedad77183a91669
+653	803	7448061845580137	RREF.exe	48a385b80095616c
+1	11	7448061838230163	clean	d15dfd25f24a135d
+2	12	7448064459975242	clean	d15dfd25f24a135d
+22	671	7448064461051763	CMakeFiles/RREF.dir/Rat.cpp.obj	c5a9ef92603a017c
+7	744	7448064460891561	CMakeFiles/RREF.dir/main.cpp.obj	b5f32d6fdb3ed137
+16	840	7448064460986677	CMakeFiles/RREF.dir/Solution.cpp.obj	cedad77183a91669
+840	968	7448064469225759	RREF.exe	48a385b80095616c

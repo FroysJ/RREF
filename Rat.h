@@ -5,7 +5,6 @@
 #ifndef RAT_H
 #define RAT_H
 
-#include <vector>
 #include <numeric>
 #include <cmath>
 #include <iostream>
@@ -66,6 +65,17 @@ public:
         d = l;
         simplify();
         return *this;
+    }
+    static constexpr int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    static constexpr int lcm(int a, int b) {
+        return (a / gcd(a, b)) * b;
     }
     int n;
     int d;

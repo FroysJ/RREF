@@ -14,6 +14,8 @@ from ttkbootstrap.tableview import Tableview
 from ttkbootstrap.scrolled import ScrolledText
 from ttkbootstrap.style import Style
 
+import solution
+
 
 def is_valid(input_val, min_val):
     return int(input_val) >= min_val
@@ -104,6 +106,7 @@ def calculate_rref():
     on_render(render_latex_matrix(orig_matrix), orig_frame)
 
     # pass values_matrix to c++ Solution::int_rref function
+    values_matrix = solution.PySolution.int_rref(solution.PySolution, values_matrix)
     # take output and assign it to values_matrix
 
     sol_label = tb.Label(rref_frame, text="Solved matrix:")
@@ -138,7 +141,7 @@ def calculate_sdiv():
     clear_below_row(7, sdiv_frame)
 
     # pass coefficients and linear_co to c++ Solution::int_sdiv function
-    result = coefficients  # replace coefficients with result of function
+    result = solution.PySolution.int_sdiv(solution.PySolution, coefficients, linear_co)
 
     orig_label = tb.Label(sdiv_frame, text="Polynomial:")
     orig_label.grid(row=7, column=0, padx=20, pady=20, sticky=W)
@@ -168,7 +171,7 @@ def calculate_sdiv():
 
 
 def render_latex_matrix(input_matrix):
-    fig, ax = plt.subplots(figsize=(math.ceil(len(input_matrix[0]) / 3), math.ceil(len(input_matrix) / 2)))
+    fig, ax = plt.subplots(figsize=(math.ceil(len(input_matrix[0])+1 / 3), math.ceil(len(input_matrix) / 2)))
     ax.axis('off')
 
     maxCols = max(40, len(input_matrix[0]))
@@ -219,6 +222,9 @@ def poly_render(coeffs):
         terms.append(term)
 
     latex_poly = " ".join(terms)
+
+    if latex_poly == " " or latex_poly == "":
+        latex_poly += r'0'
 
     ax.text(0.5, 0.5, f"${latex_poly}$", fontsize=20, ha='center', va='center')
 

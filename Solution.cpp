@@ -3,6 +3,7 @@
 //
 
 #include "Solution.h"
+#include "Rat.h"
 
 #include <cassert>
 #include <vector>
@@ -96,9 +97,9 @@ void Solution::printVector(const vector<Rat>& vec) {
 }
 
 
-vector<Rat> Solution::sdiv(const vector<Rat>& p, const pair<Rat,Rat>& d) {
-    Rat factor(d.first.d, d.first.n);
-    Rat mult = -1 * factor * d.second;
+vector<Rat> Solution::sdiv(const vector<Rat>& p, const vector<Rat>& d) {
+    Rat factor(d[0].d, d[0].n);
+    Rat mult = -1 * factor * d[1];
     vector<Rat> q(p.size(), p[0]);
     for (int i = 1; i < p.size(); i++) {
         Rat em = mult * q[i-1];
@@ -115,7 +116,7 @@ vector<vector<int>> Solution::ratMatrixToInt(vector<vector<Rat>> &matrix) {
     int scale = 1;
     for (int i = 0; i < matrix.size(); i++) {
         for (int j = 0; j < matrix[0].size(); j++) {
-            scale = lcm(scale, matrix[i][j].d);
+            scale = Rat::lcm(scale, matrix[i][j].d);
         }
     }
     Rat mult(scale);
@@ -133,7 +134,7 @@ vector<vector<int>> Solution::ratMatrixToInt(vector<vector<Rat>> &matrix) {
 vector<int> Solution::ratVectorToInt(vector<Rat> &vec) {
     int scale = 1;
     for (auto & i : vec) {
-        scale = lcm(scale, i.d);
+        scale = Rat::lcm(scale, i.d);
     }
     Rat mult(scale);
     vector<int> ret(vec.size(), 0);
@@ -146,7 +147,7 @@ vector<int> Solution::ratVectorToInt(vector<Rat> &vec) {
 }
 
 vector<vector<int>> Solution::int_rref(vector<vector<int>>& matrix) {
-    vector ratMatrix(matrix.size(), vector<Rat>(matrix[0].size(), 0));
+    vector<vector<Rat>> ratMatrix(matrix.size(), vector<Rat>(matrix[0].size(), 0));
     for (int i = 0; i < matrix.size(); i++) {
         for (int j = 0; j < matrix[0].size(); j++) {
             ratMatrix[i][j] = matrix[i][j];
@@ -156,9 +157,14 @@ vector<vector<int>> Solution::int_rref(vector<vector<int>>& matrix) {
     return ratMatrixToInt(ratMatrix);
 }
 
-vector<int> Solution::int_sdiv(vector<int>& p, pair<int,int>& d) {
+vector<int> Solution::int_sdiv(vector<int>& p, vector<int>& d) {
     vector<Rat> ratP(p.size(), 0);
-    pair<Rat,Rat> ratD(d.first, d.second);
+    vector<Rat> ratD(2, 0);
+    for (int i = 0; i < p.size(); i++) {
+        ratP[i] = p[i];
+    }
+    ratD[0] = d[0];
+    ratD[1] = d[1];
     vector<Rat> ret = sdiv(ratP, ratD);
     return ratVectorToInt(ret);
 }

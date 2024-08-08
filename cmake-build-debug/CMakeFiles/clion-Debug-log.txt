@@ -1,0 +1,4 @@
+"C:\Users\froys\Downloads\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Users/froys/Downloads/CLion 2024.1.4/bin/ninja/win/x64/ninja.exe" -DPython3_EXECUTABLE=C:\Users\froys\Downloads\Python\RREF\Scripts\python.exe -G Ninja -S C:\Users\froys\Downloads\CLionProjects\RREF -B C:\Users\froys\Downloads\CLionProjects\RREF\cmake-build-debug
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/froys/Downloads/CLionProjects/RREF/cmake-build-debug
