@@ -4,10 +4,10 @@
 {
     "distutils": {
         "depends": [
-            "C:\\Users\\froys\\Downloads\\CLionProjects\\RREF\\Solution.h"
+            "*\\Solution.h"
         ],
         "include_dirs": [
-            "C:\\Users\\froys\\Downloads\\CLionProjects\\RREF"
+            "*"
         ],
         "language": "c++",
         "name": "solution",

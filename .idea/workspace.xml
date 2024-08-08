@@ -20,17 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd688cd-d44b-4a22-8f8a-ec5b9da18242" name="Changes" comment="Added SolutionGUI.py">
-      <change afterPath="$PROJECT_DIR$/example.pyx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3bd688cd-d44b-4a22-8f8a-ec5b9da18242" name="Changes" comment="Incorporated Cython">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Rat.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rat.h" beforeDir="false" afterPath="$PROJECT_DIR$/Rat.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Solution.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Solution.h" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolutionGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/SolutionGUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/example.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,11 +139,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SolutionGUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RREF" />
       <option name="ENV_FILES" value="" />
@@ -225,7 +213,8 @@
       <workItem from="1723094140213" duration="3729000" />
       <workItem from="1723097916829" duration="791000" />
       <workItem from="1723098725341" duration="1383000" />
-      <workItem from="1723100128842" duration="3074000" />
+      <workItem from="1723100128842" duration="3962000" />
+      <workItem from="1723147019837" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -299,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723091212343</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Incorporated Cython">
+      <option name="closed" value="true" />
+      <created>1723103356337</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723103356337</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +340,8 @@
     <MESSAGE value="Implemented Solution::sdiv" />
     <MESSAGE value="Added more overloads for Rat.h" />
     <MESSAGE value="Added SolutionGUI.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SolutionGUI.py" />
+    <MESSAGE value="Incorporated Cython" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incorporated Cython" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
